@@ -1,0 +1,10 @@
+<%= simple_form_for @product do |f| %>
+      <%= f.input :name, placeholder: "Kudoz", label: "Product name" %>
+      <%= f.input :url, placeholder: "http://kudoz.com", label: "Product url"  %>
+      <%= f.button :submit, "Sauvegarder", class:"btn btn-primary" %>
+
+      <%= link_to "Cancel", products_path, class: "btn btn-danger"%>
+
+
+
+<% end %>

@@ -6,6 +6,9 @@
  <% @products.each do |product| %>
  <li>
   <%= link_to product.name, product_path(product) %>
+  (<%= product.url %>)
+  <%= link_to "editer", edit_product_path(product) %>
+  <%= link_to "delete", product_path(product), method: :delete %>
  </li>
  <% end %>
 </ul>

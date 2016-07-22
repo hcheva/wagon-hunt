@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
     @products = Product.all
@@ -6,7 +7,6 @@ class ProductsController < ApplicationController
 
 def show
   index = params[:id]
-  @product = Product.find(params[:id])
 end
 
 def new
@@ -26,15 +26,27 @@ def edit
 end
 
 def update
+  if @product.update(product_params)
+      redirect_to products_path
+    else
+      render :edit
+    end
+
 end
 
 def destroy
+  @product.destroy
+  redirect_to products_path
 end
 
 private
 
 def product_params
   params.require(:product).permit(:name, :url)
+end
+
+def find_product
+  @product = Product.find(params[:id])
 end
 
 
