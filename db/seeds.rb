@@ -12,3 +12,4 @@ Product.destroy_all
 Product.create!(name: "Kudoz", url:"http://getkudoz.com", tagline:"Tinder for job search")
 Product.create!(name: "uSlide", url:"http://uslide.io", tagline:"Youtube sucks for education")
 Product.create!(name: "Medpics", url:"http://medpics.com", tagline:"Share your diag")
+Product.create!(name: "Rapfeed", url:"http://rapfeed.com", tagline:"Rap every day")
