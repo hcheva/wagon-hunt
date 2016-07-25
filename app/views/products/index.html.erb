@@ -1,47 +1,50 @@
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "bg.jpg" %>');">
+  <div class="banner-content">
+    <h1>Cool products, every day.</h1>
+    <p>Find creative and innovative products</p>
+  </div>
+  </div>
+
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1 class ="text-center">All products</h1>
+  <h3 class="text-center"><%= @today = Date.today.strftime("%d %b %Y") %></h3>
 
-<!--<p><%= link_to "Accueil", root_path, class: "btn btn-primary" %></p>-->
+    <% @products.each_slice(3) do |products| %>
+          <div class="row">
+            <% products.each do |product| %>
+                <div class="col-lg-4">
 
+                <%= link_to product_path(product) do %>
+                <img src="http://unsplash.it/360/250?random" alt="kudoz">
+                <% end %>
 
-        <% @products.each do |product| %>
-          <!--<li>
-          <%= link_to product.name, product_path(product) %>
-          (<%= product.url %>)
-          <%= link_to "editer", edit_product_path(product) %>
-          <%= link_to "delete", product_path(product), method: :delete %>
-          </li>-->
+                    <div class="product">
+                      <div class='product-upvote'>
+                      <div class="product-arrow"></div>
+                      <div class='product-count'>95</div>
+                  </div>
 
-          <div class="product">
-            <div class='product-upvote'>
-            <div class="product-arrow"></div>
-            <div class='product-count'>95</div>
-          </div>
-          <img src="http://unsplash.it/300/200?random" alt="kudoz" class="product-image hidden-xs">
           <div class='product-body'>
           <h3><%= link_to product.name, product_path(product) %></h3>
           <p><%= product.tagline %></p>
           </div>
-          <ul class="list-inline product-controls hidden-sm hidden-xs">
-          <li>
-          <%= link_to product_path(product) do %>
-          <i class="fa fa-eye"></i>
-          <% end %>
+
+          <!--<ul class="list-inline product-controls hidden-sm hidden-xs">
+            <li>
+              <%= link_to product_path(product) do %>
+              <i class="fa fa-eye"></i>
+              <% end %>
           </li>
+
           <li><a href=""><i class="fa fa-share"></i></a></li>
           <li><a href=""><i class="fa fa-star"></i></a></li>
-          </ul>
+          </ul>-->
+
         </div>
-
-
-          <% end %>
-
-
-
-    </div>
+      </div>
+    <% end %>
   </div>
+<div style="padding: 20px"></div>
+<% end %>
 </div>
 
 

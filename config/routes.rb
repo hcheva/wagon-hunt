@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get "/team" => "pages#team"
   get "/contact" => "pages#join_us"
+  get "/grid" => "pages#grid"
 
   resources :products
 
