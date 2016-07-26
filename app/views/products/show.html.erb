@@ -7,6 +7,15 @@
     </span>
     </p>
     <p><%= link_to "Get it", @product.url, class: "btn btn-primary" %></p>
+
+
+    <% if @product.user %>
+      <p>
+        posted by <%= @product.user.email %>
+      </p>
+    <% end %>
+
+
   </div>
 </div>
 

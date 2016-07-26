@@ -1,3 +1,4 @@
+
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
@@ -12,6 +13,8 @@
   <%= link_to "Art", products_path(category: "art"), class:"navbar-wagon-item navbar-wagon-link" %>
 
   </div>
+
+  <% if user_signed_in? %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -31,14 +34,24 @@
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
           <li><a href="#">Profile</a></li>
           <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+          <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>
 
     <!-- Button (call-to-action) -->
-    <%= link_to "Add product", new_product_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
   </div>
+
+  <% else %>
+    <div class="hidden-xs hidden-sm">
+    <%= link_to "Login", new_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    </div>
+
+  <% end %>
+
+
 
   <!-- Dropdown appearing on mobile only -->
   <div class="navbar-wagon-item hidden-md hidden-lg">
