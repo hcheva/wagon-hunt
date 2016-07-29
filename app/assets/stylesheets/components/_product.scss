@@ -39,6 +39,19 @@
   font-size: 13px;
   line-height: 20px;
 }
+
+.product-upvoted, a.product-upvote.product-upvoted {
+  color: #5898f1;
+}
+
+.product-upvoted .product-arrow {
+  border-bottom-color: #5898f1;
+}
+
+a.product-upvote {
+  color: black;
+}
+
 .product-count {
   margin: 2px 0 0;
 }
@@ -81,6 +94,11 @@
   background: #f7f7fa;
   cursor: pointer;
 }
+
+a.product-upvote:hover {
+  text-decoration: none;
+}
+
 .product-upvote:hover {
   color: #5898f1;
   cursor: pointer;

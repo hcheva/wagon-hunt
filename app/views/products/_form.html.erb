@@ -2,7 +2,7 @@
       <%= f.input :name, placeholder: "Kudoz", label: "Product name" %>
       <%= f.input :url, placeholder: "http://kudoz.com", label: "Product url"  %>
       <%= f.input :tagline, placeholder: "Tagline", label: "Tagline"  %>
-      <%= f.input :category, collection: ["lifestyle", "fashion", "food", "art"], prompt: "Category"  %>
+      <%= f.input :category, collection: ["Lifestyle", "Fashion", "Food", "Art", "Tech"], prompt: "Category"  %>
       <%= f.input :photo, as: :attachinary %>
       <%= f.button :submit, "Sauvegarder", class:"btn btn-primary" %>
       <%= link_to "Cancel", products_path, class: "btn btn-danger"%>

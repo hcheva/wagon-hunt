@@ -13,7 +13,14 @@ User.destroy_all
 
 henri = User.create!(email: 'henri.chevallier@gmail.com', password: 'testtest')
 
-Product.create!(user: henri, name: "Kudoz", url:"http://getkudoz.com", tagline:"Tinder for job search", category:"lifestyle")
-Product.create!(user: henri, name: "uSlide", url:"http://uslide.io", tagline:"Youtube sucks for education", category:"lifestyle")
-Product.create!(user: henri, name: "Medpics", url:"http://medpics.com", tagline:"Share your diag", category:"lifestyle")
-Product.create!(user: henri, name: "Rapfeed", url:"http://rapfeed.com", tagline:"Rap every day", category:"lifestyle")
+happysocks = Product.create!(user: henri, name: "Happy Socks", url:"https://www.happysocks.com", tagline:"Very cool socks", category:"fashion", photo:"")
+foodette = Product.create!(user: henri, name: "Foodette", url:"http://foodette.fr", tagline:"Delicious meals with healthy products, delivered every week", category:"food", photo:"")
+pret_a_pousser = Product.create!(user: henri, name: "Prêt à pousser", url:"https://pretapousser.fr/", tagline:"Grown your own mushrooms at home", category:"food", photo:"")
+lineable = Product.create!(user: henri, name: "Lineable", url:"https://www.amazon.com/Lineable-Smart-Wristband-Orange-Small/dp/B015E8OHEW/", tagline:"Lineable GPS Wristband for Kids", category:"tech", photo:"")
+
+#upvotes
+
+happysocks.upvotes.create! user: henri
+foodette.upvotes.create! user: henri
+pret_a_pousser.upvotes.create! user: henri
+lineable.upvotes.create! user: henri

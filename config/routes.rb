@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   mount Attachinary::Engine => "/attachinary"
   devise_for :users
-  root to: 'pages#home'
+  root to: 'products#index'
 
   get "/team" => "pages#team"
   get "/contact" => "pages#join_us"
   get "/grid" => "pages#grid"
 
   resources :products
+  resources :upvotes, only: [ :create, :destroy ]
 
   #read actions routes
   get "/products/:id" => "products#show"

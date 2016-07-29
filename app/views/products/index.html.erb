@@ -22,11 +22,36 @@
                 <% end %>
               <% end %>
 
-                    <div class="product">
-                      <div class='product-upvote'>
+               <div class="product">
+
+                <% if user_signed_in? %>
+                  <% if current_user.voted_for?(product) %>
+                    <%= link_to upvote_path(current_user.upvotes.where(product: product).first), method: :delete, class: 'product-upvote product-upvoted' do %>
                       <div class="product-arrow"></div>
-                      <div class='product-count'>95</div>
+                      <div class='product-count'>
+                        <%= product.upvotes.size %>
+                      </div>
+                    <% end %>
+                  <% else %>
+                    <%= link_to upvotes_path(product_id: product.id), method: :post, class: 'product-upvote' do %>
+                      <div class="product-arrow"></div>
+                      <div class='product-count'>
+                        <%= product.upvotes.size %>
+                      </div>
+                    <% end %>
+                  <% end %>
+
+                <% else %>
+                <%= link_to new_user_session_path do %>
+                  <div class='product-upvote'>
+                    <div class="product-arrow"></div>
+                    <div class='product-count'>
+                      <%= product.upvotes.size %>
+                    </div>
                   </div>
+                <% end %>
+                <% end %>
+
 
           <div class='product-body'>
           <h3><%= link_to product.name, product_path(product) %></h3>
