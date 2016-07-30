@@ -4,6 +4,7 @@
   padding: 20px;
   border-radius: 3px;
   transition: all 0.15s ease;
+  width: 370px;
 }
 
 /* Body design */
@@ -15,6 +16,7 @@
   font-size: 18px;
   margin-top: 0;
   margin-bottom: 5px;
+  text-decoration: none;
 
 }
 .product-body p {
@@ -38,6 +40,7 @@
   font-weight: bold;
   font-size: 13px;
   line-height: 20px;
+  display: inline-block;
 }
 
 .product-upvoted, a.product-upvote.product-upvoted {
@@ -90,6 +93,11 @@ a.product-upvote {
 }
 
 /* Hover effects */
+
+a:hover {
+  text-decoration: none;
+}
+
 .product:hover {
   background: #f7f7fa;
   cursor: pointer;

@@ -45,13 +45,17 @@
   padding: 0 20px;
 }
 
+a.navbar-wagon-item {
+  text-decoration: none;
+}
+
 /* Navbar standard link */
 .navbar-wagon-link {
   color: #616668;
   font-size: 16px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #469AE0;
   text-decoration: none;
 }
 

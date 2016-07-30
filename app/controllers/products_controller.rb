@@ -3,10 +3,11 @@ skip_before_action :authenticate_user!, only: [:index, :show]
 before_action :find_product, only: [:show, :edit, :update, :destroy]
 
   def index
+
     if params[:category]
-      @products =Product.where(category: params[:category])
+    @products = Product.where(category: params[:category])
     else
-     @products = Product.all
+     @products = Product.all.order(created_at: :desc)
   end
 end
 def show

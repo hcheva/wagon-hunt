@@ -45,13 +45,13 @@
     </div>
 
     <!-- Button (call-to-action) -->
-    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item" %>
   </div>
 
   <% else %>
     <div class="hidden-xs hidden-sm">
-    <%= link_to "Login", new_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <%= link_to "Login", new_user_session_path, class:"navbar-wagon-item" %>
+    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item" %>
     </div>
 
   <% end %>
