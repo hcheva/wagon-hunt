@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
+
   mount Attachinary::Engine => "/attachinary"
   devise_for :users
   root to: 'products#index'
 
-  get "/team" => "pages#team"
-  get "/contact" => "pages#join_us"
+
+  get "/about" => "pages#about"
   get "/grid" => "pages#grid"
 
   resources :products

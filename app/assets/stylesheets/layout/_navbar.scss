@@ -8,6 +8,7 @@
   padding: 0px 30px;
   align-items: center;
   justify-content: space-between;
+  font-family: 'Raleway';
 }
 
 /* Optional class to fix the navbar on top */
@@ -42,7 +43,7 @@
 .navbar-wagon-item {
   flex: 0 1 auto;
   cursor: pointer;
-  padding: 0 20px;
+  padding: 0 15px;
 }
 
 a.navbar-wagon-item {
@@ -51,9 +52,17 @@ a.navbar-wagon-item {
 
 /* Navbar standard link */
 .navbar-wagon-link {
-  color: #616668;
-  font-size: 16px;
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
 }
+
+.navbar-wagon-link:active {
+  color: #000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .navbar-wagon-link:hover {
   color: #469AE0;
   text-decoration: none;
@@ -113,13 +122,12 @@ a.navbar-wagon-item {
 /* Navbar dropdown menu */
 .navbar-wagon-dropdown-menu {
   margin-top: 15px;
-  box-shadow: 1px 1px 4px #E6E6E6;
-  border-color: #E6E6E6;
+  border-color: #ccc;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
-  font-weight: lighter !important;
-  color: #999999 !important;
+  font-weight: bold !important;
+  color: #000 !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -137,6 +145,6 @@ a.navbar-wagon-item {
   top: -6px;
   background-color: white;
   transform: rotate(45deg);
-  border-left: 1px solid #E6E6E6;
-  border-top: 1px solid #E6E6E6;
+  border-left: 1px solid #ccc;
+  border-top: 1px solid #ccc;
 }

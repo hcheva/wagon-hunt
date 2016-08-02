@@ -13,6 +13,8 @@ gem 'cloudinary', '~> 1.0.24'
 gem 'attachinary'
 gem 'jquery-fileupload-rails'
 gem 'coffee-rails'
+gem 'friendly_id', '~> 5.0.0'
+gem 'metamagic'
 
 gem 'sass-rails'
 gem 'jquery-rails'

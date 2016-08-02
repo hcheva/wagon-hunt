@@ -2,22 +2,27 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-  <%= image_tag"lewagon.png" %>
+  <%= image_tag"rushdaddy-logo.png" %>
   </a>
   <!-- Left Navigation -->
   <div class="navbar-wagon-left hidden-xs hidden-sm">
-  <%= link_to "All", products_path, class:"navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Lifestyle", products_path(category: "lifestyle"), class:"navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Tech", products_path(category: "tech"), class:"navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Fashion", products_path(category: "fashion"), class:"navbar-wagon-item navbar-wagon-link" %>
+  <%= link_to "Home", products_path(category: "home"), class:"navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Food", products_path(category: "food"), class:"navbar-wagon-item navbar-wagon-link" %>
   <%= link_to "Art", products_path(category: "art"), class:"navbar-wagon-item navbar-wagon-link" %>
 
+
   </div>
+
 
   <% if user_signed_in? %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+   <a href="/about" class="navbar-wagon-item navbar-wagon-link">About</a>
 
     <!-- Search form -->
     <!--<form action="" class="navbar-wagon-search">
@@ -37,21 +42,21 @@
         <% end %>
 
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
+          <li><%= link_to "Profile", edit_user_registration_path %></li>
           <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         </ul>
       </div>
     </div>
 
     <!-- Button (call-to-action) -->
-    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item" %>
-  </div>
+    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      </div>
 
   <% else %>
     <div class="hidden-xs hidden-sm">
-    <%= link_to "Login", new_user_session_path, class:"navbar-wagon-item" %>
-    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item" %>
+    <a href="/about" class="navbar-wagon-item navbar-wagon-link">About</a>
+    <%= link_to "Login", new_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %>
+    <%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item navbar-wagon-link" %>
     </div>
 
   <% end %>
@@ -63,9 +68,9 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <li><a href="#">Some mobile link</a></li>
-        <li><a href="#">Other one</a></li>
-        <li><a href="#">Other one</a></li>
+        <li><a href="/about" class="navbar-wagon-item navbar-wagon-link">About</a></li>
+        <li><%= link_to "Login", new_user_session_path, class:"navbar-wagon-item navbar-wagon-link" %></li>
+        <li><%= link_to "+ Post product", new_product_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
       </ul>
     </div>
   </div>

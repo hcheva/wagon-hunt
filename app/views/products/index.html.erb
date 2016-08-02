@@ -1,3 +1,5 @@
+<% meta title: "RushDaddy - Cool products, every day !", description: "RushDaddy surfaces the best creative and innovative products, every day." %>
+
 <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url('<%= image_path "bg.jpg" %>');">
   <div class="banner-content">
     <h1>Cool products, every day.</h1>
@@ -6,14 +8,16 @@
   </div>
 
 <div class="container">
-  <h3 class="text-center"><%= @today = Date.today.strftime("%d %b %Y") %></h3>
+  <h3 class="products-by-date">
+
+  <%= @today = Date.today.strftime("%d %b %Y") %></h3>
 
     <% @products.each_slice(3) do |products| %>
           <div class="row">
             <% products.each do |product| %>
                 <div class="col-lg-4">
 
-              <%= link_to product_path(product) do %>
+              <%= link_to product.url, target: "_blank" do %>
 
                 <% if product.photo? %>
                   <%= cl_image_tag(product.photo.path, height: 250, width: 370, crop: :fill) %>
@@ -30,7 +34,7 @@
 
 
           <div class='product-body'>
-          <h3><%= link_to product.name, product_path(product) %></h3>
+          <h3><%= link_to product.name, product.url, target: "_blank" %></h3>
           <p><%= product.tagline %></p>
           </div>
 
@@ -51,7 +55,9 @@
   </div>
 <div style="padding: 20px"></div>
 <% end %>
+
 </div>
+
 
 
 

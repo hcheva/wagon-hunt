@@ -13,10 +13,10 @@ User.destroy_all
 
 henri = User.create!(email: 'henri.chevallier@gmail.com', password: 'testtest')
 
-happysocks = Product.create!(user: henri, name: "Happy Socks", url:"https://www.happysocks.com", tagline:"Very cool socks", category:"fashion", photo:"")
-foodette = Product.create!(user: henri, name: "Foodette", url:"http://foodette.fr", tagline:"Delicious meals with healthy products, delivered every week", category:"food", photo:"")
-pret_a_pousser = Product.create!(user: henri, name: "Prêt à pousser", url:"https://pretapousser.fr/", tagline:"Grown your own mushrooms at home", category:"food", photo:"")
-lineable = Product.create!(user: henri, name: "Lineable", url:"https://www.amazon.com/Lineable-Smart-Wristband-Orange-Small/dp/B015E8OHEW/", tagline:"Lineable GPS Wristband for Kids", category:"tech", photo:"")
+happysocks = Product.create!(user: henri, name: "Happy Socks", url:"https://www.happysocks.com", tagline:"Very cool socks", category:"fashion", photo:"", created_at:"Fri, 27 Jul 2016 15:29:36 UTC +00:00,")
+foodette = Product.create!(user: henri, name: "Foodette", url:"http://foodette.fr", tagline:"Delicious meals with healthy products, delivered every week", category:"food", photo:"", created_at:"Fri, 28 Jul 2016 15:29:36 UTC +00:00,")
+pret_a_pousser = Product.create!(user: henri, name: "Prêt à pousser", url:"https://pretapousser.fr/", tagline:"Grown your own mushrooms at home", category:"food", photo:"", created_at:"Fri, 29 Jul 2016 15:29:36 UTC +00:00,")
+lineable = Product.create!(user: henri, name: "Lineable", url:"https://www.amazon.com/Lineable-Smart-Wristband-Orange-Small/dp/B015E8OHEW/", tagline:"Lineable GPS Wristband for Kids", category:"tech", photo:"", created_at:"Fri, 29 Jul 2016 15:29:36 UTC +00:00,")
 
 #upvotes
 

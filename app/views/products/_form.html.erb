@@ -1,12 +1,10 @@
+
 <%= simple_form_for @product do |f| %>
       <%= f.input :name, placeholder: "Kudoz", label: "Product name" %>
       <%= f.input :url, placeholder: "http://kudoz.com", label: "Product url"  %>
       <%= f.input :tagline, placeholder: "Tagline", label: "Tagline"  %>
-      <%= f.input :category, collection: ["lifestyle", "fashion", "food", "art", "tech"], prompt: "Category"  %>
+      <%= f.input :category, collection: ["lifestyle", "fashion", "food", "art", "tech", "home"], prompt: "Category"  %>
       <%= f.input :photo, as: :attachinary %>
-      <%= f.button :submit, "Sauvegarder", class:"btn btn-primary" %>
-      <%= link_to "Cancel", products_path, class: "btn btn-danger"%>
-
-
-
+      <%= f.button :submit, "Save", class:"btn btn-primary" %>
+      <%= link_to "Cancel", :back, class: "btn btn-danger"  %>
 <% end %>
